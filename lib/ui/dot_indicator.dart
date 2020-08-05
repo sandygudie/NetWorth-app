@@ -10,19 +10,19 @@ class Indicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: positionIndex == currentIndex
-          ? Config.xMargin(context, 3.8)
-          : Config.xMargin(context, 2.4),
+          ? Config.xMargin(context, 2.546)
+          : Config.xMargin(context, 2.546),
       height: positionIndex == currentIndex
-          ? Config.yMargin(context, 1.8)
-          : Config.yMargin(context, 1.1),
+          ? Config.yMargin(context, 1.317)
+          : Config.yMargin(context, 1.317),
       decoration: BoxDecoration(
           border: Border.all(
               color: positionIndex == currentIndex
                   ? appThemeData.buttonColor
-                  : Theme.of(context).hintColor),
+                  : Color(0xFFE5E5E5)),
           color: positionIndex == currentIndex
               ? appThemeData.buttonColor
-              : Theme.of(context).hintColor,
+              : Color(0xFFE5E5E5),
           borderRadius: BorderRadius.circular(Config.xMargin(context, 20))),
     );
   }

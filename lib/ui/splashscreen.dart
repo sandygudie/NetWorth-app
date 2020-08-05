@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:networthapp/core/constants/routes/routes.dart';
 import 'package:networthapp/ui/Theme/appTheme.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -16,8 +17,9 @@ class _SplashScreenState extends State<SplashScreen> {
 
   splashTimer() async {
     var duration = Duration(seconds: 3);
-
-    return new Timer(duration, () {});
+    return new Timer(duration, () {
+      Navigator.pushNamed(context, RouteNames.onboarding);
+    });
   }
 
   @override

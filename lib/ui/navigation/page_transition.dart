@@ -1,5 +1,6 @@
 import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
+import 'package:networthapp/ui/Theme/appTheme.dart';
 
 class ForwardAnimation extends StatefulWidget {
   final Widget child;
@@ -42,7 +43,7 @@ class _ForwardAnimationState extends State<ForwardAnimation>
         animation: animationController,
         builder: (context, child) {
           return Material(
-            color: Theme.of(context).backgroundColor,
+            color: appThemeData.backgroundColor,
             child: Transform(
                 transform:
                     Matrix4.translationValues(animation.value * width, 0, 0),

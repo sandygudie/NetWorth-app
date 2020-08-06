@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:networthapp/ui/Theme/appTheme.dart';
-import 'package:networthapp/ui/dot_indicator.dart';
 import 'package:networthapp/ui/navigation/page_transition.dart';
 import 'package:networthapp/ui/size_config/config.dart';
+import 'package:networthapp/ui/views/onboarding_screen/dot_indicator.dart';
 
 class OnboardingScreen extends StatefulWidget {
   @override

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:networthapp/ui/DropdownItem.dart';
 import 'package:networthapp/ui/Theme/appTheme.dart';
-import 'package:networthapp/ui/add_asset/add_asset_model.dart';
-import 'package:networthapp/ui/add_money/add_money_screen_model.dart';
 import 'package:networthapp/ui/size_config/config.dart';
+import 'package:networthapp/ui/views/add_asset/add_asset_model.dart';
 import 'package:provider/provider.dart';
 
 class AddAssetScreen extends StatefulWidget {

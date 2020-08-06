@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:networthapp/ui/views/add_asset/add_asset_screen.dart';
+import 'package:networthapp/ui/views/add_debt/add_debt_screen.dart';
 import 'package:networthapp/ui/views/add_item_screen.dart';
+import 'package:networthapp/ui/views/add_money/add_money_screen.dart';
 import 'package:networthapp/ui/views/login_screen/login_screen.dart';
 import 'package:networthapp/ui/views/onboarding_screen/onboarding_screen.dart';
 import 'package:networthapp/ui/views/signup_screen/signup_screen.dart';
 import 'package:networthapp/ui/views/splashscreen.dart';
-import 'package:networthapp/ui/add_asset/add_asset_screen.dart';
-import 'package:networthapp/ui/add_debt/add_debt_screen.dart';
-import 'package:networthapp/ui/add_money/add_money_screen.dart';
 
 class RouteNames {
   //Custom class that holds all the named routes as constants for easy reference

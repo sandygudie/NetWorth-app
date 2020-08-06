@@ -19,7 +19,10 @@ class DropdownItem extends StatelessWidget {
       children: <Widget>[
         CircleAvatar(
           backgroundColor: background,
-          child: Image.asset(itemImage),
+          child: Image.asset(
+            itemImage,
+            scale: 0.8,
+          ),
         ),
         SizedBox(
           width: Config.xMargin(

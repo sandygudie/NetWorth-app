@@ -22,7 +22,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'My Networth',
-      initialRoute: RouteNames.signUpScreen,
+      initialRoute: RouteNames.splashScreen,
       onGenerateRoute: RouteGenerator.generateRoute,
     );
   }

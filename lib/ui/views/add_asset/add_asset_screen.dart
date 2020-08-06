@@ -33,6 +33,7 @@ class _AddAssetScreenState extends State<AddAssetScreen> {
         backgroundColor: appThemeData.backgroundColor,
         title: Text(
           'Add An Asset',
+          textAlign: TextAlign.start,
           style: TextStyle(
               color: appThemeData.primaryColor,
               fontFamily: 'Open Sans',
@@ -82,9 +83,9 @@ class _AddAssetScreenState extends State<AddAssetScreen> {
                             value: addAssetModel.selectedAssetItem,
 //                          value: null,
                             isDense: true,
-                            items: addAssetModel.assetItems.map((value) {
-                              return DropdownMenuItem<DropdownItem>(
-                                value: value,
+                            items: AddAssetModel.assetItems.map((value) {
+                              return DropdownMenuItem<dynamic>(
+                                value: value.itemName,
                                 child: value,
                               );
                             }).toList(),
@@ -243,7 +244,7 @@ class _AddAssetScreenState extends State<AddAssetScreen> {
                 ],
               ),
               Container(
-                height: Config.yMargin(context, 5.5),
+                height: Config.yMargin(context, 6.5),
                 child: FlatButton(
                   color: appThemeData.buttonColor,
                   onPressed: () {},

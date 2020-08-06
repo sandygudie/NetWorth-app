@@ -6,7 +6,7 @@ class AddDebtModel extends ChangeNotifier {
 
   var selectedPeriod = 'Day';
 
-  List<DropdownItem> debtItems = [
+  static List<DropdownItem> debtItems = [
     DropdownItem(
       itemImage: 'images/mortgage.png',
       itemName: 'Mortgage',
@@ -30,12 +30,12 @@ class AddDebtModel extends ChangeNotifier {
 //    background: Color(0xFFFFF3E1),
 //  );
 
-  var selectedDebtItem;
+  var selectedDebtItem = debtItems[0].itemName;
 
-  String updateItem(DropdownItem val) {
+  String updateItem(String val) {
     selectedDebtItem = val;
     notifyListeners();
-    return selectedDebtItem.itemName;
+    return selectedDebtItem;
   }
 
   String updatePeriod(String per) {

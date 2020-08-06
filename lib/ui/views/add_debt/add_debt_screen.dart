@@ -81,11 +81,10 @@ class _AddDebtScreenState extends State<AddDebtScreen> {
                               size: Config.xMargin(context, 8),
                             ),
                             value: addDebtModel.selectedDebtItem,
-//                          value: null,
                             isDense: true,
-                            items: addDebtModel.debtItems.map((value) {
-                              return DropdownMenuItem<DropdownItem>(
-                                value: value,
+                            items: AddDebtModel.debtItems.map((value) {
+                              return DropdownMenuItem<dynamic>(
+                                value: value.itemName,
                                 child: value,
                               );
                             }).toList(),
@@ -256,7 +255,7 @@ class _AddDebtScreenState extends State<AddDebtScreen> {
                 ],
               ),
               Container(
-                height: Config.yMargin(context, 5.5),
+                height: Config.yMargin(context, 6),
                 child: FlatButton(
                   color: appThemeData.buttonColor,
                   onPressed: () {},

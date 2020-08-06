@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:networthapp/core/constants/routes/routes.dart';
 import 'package:networthapp/ui/Theme/appTheme.dart';
 import 'package:networthapp/ui/size_config/config.dart';
 
@@ -18,7 +19,9 @@ class AddItemScreen extends StatelessWidget {
                   top: Config.yMargin(context, 7.72),
                 ),
                 icon: Icon(Icons.close),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pop(context);
+                },
               ),
             ),
           ),
@@ -53,6 +56,9 @@ class AddItemScreen extends StatelessWidget {
                     itemImage: 'images/Money.png',
                     itemName: 'Money',
                     background: Color(0xFFEAEBFA),
+                    onPressed: () {
+                      Navigator.pushNamed(context, RouteNames.addMoneyScreen);
+                    },
                   ),
                   SizedBox(
                     height: Config.yMargin(context, 6.09),
@@ -61,6 +67,9 @@ class AddItemScreen extends StatelessWidget {
                     itemImage: 'images/asset.png',
                     itemName: 'Assets',
                     background: Color(0xFFE7F6E9),
+                    onPressed: () {
+                      Navigator.pushNamed(context, RouteNames.addAssetScreen);
+                    },
                   ),
                   SizedBox(
                     height: Config.yMargin(context, 6.07),
@@ -69,6 +78,9 @@ class AddItemScreen extends StatelessWidget {
                     itemImage: 'images/debt.png',
                     itemName: 'Debts',
                     background: Color(0xFFFCE4EC),
+                    onPressed: () {
+                      Navigator.pushNamed(context, RouteNames.addDebtScreen);
+                    },
                   ),
                 ],
               ),

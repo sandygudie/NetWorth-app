@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:networthapp/ui/DropdownItem.dart';
+import 'package:networthapp/ui/components/DropdownItem.dart';
 import 'package:networthapp/ui/Theme/appTheme.dart';
 import 'package:networthapp/ui/size_config/config.dart';
 import 'package:networthapp/ui/views/add_money/add_money_screen_model.dart';

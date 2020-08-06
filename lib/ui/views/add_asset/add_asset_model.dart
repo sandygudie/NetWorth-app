@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:networthapp/ui/DropdownItem.dart';
+import 'package:networthapp/ui/components/DropdownItem.dart';
 
 class AddAssetModel extends ChangeNotifier {
   List<DropdownItem> assetItems = [

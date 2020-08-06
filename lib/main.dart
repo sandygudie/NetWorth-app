@@ -11,10 +11,8 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MainApp();
-//    return MultiProvider(
-//      providers: providers,
-//      child: MainApp(),
+//    return MainApp();
+    return MultiProvider(providers: providers, child: MainApp());
   }
 }
 

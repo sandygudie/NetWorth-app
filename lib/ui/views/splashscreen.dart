@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:networthapp/core/constants/routes/routes.dart';
 import 'package:networthapp/ui/Theme/appTheme.dart';
 
@@ -24,6 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context, width: 375, height: 812, allowFontScaling: true);
     return initScreen(context);
   }
 

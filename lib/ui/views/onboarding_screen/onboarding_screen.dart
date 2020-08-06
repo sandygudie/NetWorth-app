@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:networthapp/core/constants/routes/routes.dart';
 import 'package:networthapp/ui/Theme/appTheme.dart';
 import 'package:networthapp/ui/navigation/page_transition.dart';
 import 'package:networthapp/ui/size_config/config.dart';
@@ -121,7 +122,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     height: Config.yMargin(context, 5.5),
                     child: FlatButton(
                       color: appThemeData.buttonColor,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, RouteNames.signUpScreen);
+                      },
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(width * 0.01),
                       ),
@@ -145,7 +148,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       borderRadius: BorderRadius.circular(width * 0.01),
                     ),
                     child: FlatButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, RouteNames.loginScreen);
+                      },
                       child: Text(
                         'Login',
                         style: TextStyle(
@@ -159,40 +164,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ],
               ),
             ),
-
-//            Container(
-//              margin: EdgeInsets.only(top: Config.yMargin(context, 4.5)),
-//              height: Config.yMargin(context, 6),
-//              width: Config.xMargin(context, 40),
-//              alignment: Alignment.center,
-//              decoration: BoxDecoration(
-////                  color: Theme.of(context).primaryColor,
-////                  border: Border.all(color: Theme.of(context).primaryColor),
-//                  borderRadius:
-//                      BorderRadius.circular(Config.xMargin(context, 2.77))),
-//              child: Column(
-//                children: <Widget>[
-//                  FlatButton(
-//                    onPressed: () {
-//                      currentIndex == 2
-//                          ? Navigator.pushReplacementNamed(context, 'signup')
-//                          : _controller.animateToPage(++currentIndex,
-//                              duration: Duration(milliseconds: 150),
-//                              curve: Curves.easeInOutQuad);
-//                    },
-//                    splashColor: Theme.of(context).primaryColor,
-//                    child: Text(
-//                      currentIndex == 2 ? 'Get started' : "Next",
-//                      style: TextStyle(
-//                          fontSize: Config.textSize(context, 3.85),
-//                          color: Theme.of(context).primaryColorLight,
-//                          fontWeight: FontWeight.bold),
-//                    ),
-//                  ),
-//                  FlatButton(onPressed: () {}, child: Text('Sign Up'))
-//                ],
-//              ),
-//            ),
           ],
         ),
       ),

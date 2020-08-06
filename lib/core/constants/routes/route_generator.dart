@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:networthapp/core/constants/routes/routes.dart';
 import 'package:networthapp/ui/add_asset/add_asset_screen.dart';
 import 'package:networthapp/ui/add_debt/add_debt_screen.dart';
-import 'package:networthapp/ui/add_item_screen.dart';
 import 'package:networthapp/ui/add_money/add_money_screen.dart';
 import 'package:networthapp/ui/navigation/page_transition.dart';
 

@@ -6,10 +6,7 @@ import 'package:networthapp/ui/views/signup_screen/signup_screen.dart';
 import 'package:networthapp/ui/views/splashscreen.dart';
 import 'package:networthapp/ui/add_asset/add_asset_screen.dart';
 import 'package:networthapp/ui/add_debt/add_debt_screen.dart';
-import 'package:networthapp/ui/add_item_screen.dart';
 import 'package:networthapp/ui/add_money/add_money_screen.dart';
-import 'package:networthapp/ui/onboarding_screen.dart';
-import 'package:networthapp/ui/splashscreen.dart';
 
 class RouteNames {
   //Custom class that holds all the named routes as constants for easy reference

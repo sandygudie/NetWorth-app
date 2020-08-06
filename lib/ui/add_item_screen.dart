@@ -49,105 +49,79 @@ class AddItemScreen extends StatelessWidget {
                   SizedBox(
                     height: Config.yMargin(context, 6.96),
                   ),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Container(
-                      padding: EdgeInsets.only(
-                        left: Config.textSize(context, 36),
-                      ),
-                      child: Row(
-                        children: <Widget>[
-                          CircleAvatar(
-                            backgroundColor: Color(0xFFEAEBFA),
-                            child: Image.asset('images/Money.png'),
-                          ),
-                          SizedBox(
-                            width: Config.xMargin(
-                              context,
-                              2.03,
-                            ),
-                          ),
-                          Text(
-                            'Money',
-                            style: TextStyle(
-                              fontFamily: 'Open Sans',
-                              fontSize: Config.textSize(context, 4.58),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
+                  ItemWidget(
+                    itemImage: 'images/Money.png',
+                    itemName: 'Money',
+                    background: Color(0xFFEAEBFA),
                   ),
                   SizedBox(
                     height: Config.yMargin(context, 6.09),
                   ),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Container(
-                      padding: EdgeInsets.only(
-                        left: Config.textSize(context, 36),
-                      ),
-                      child: Row(
-                        children: <Widget>[
-                          CircleAvatar(
-                            backgroundColor: Color(0xFFE7F6E),
-                            child: Image.asset('images/asset.png'),
-                          ),
-                          SizedBox(
-                            width: Config.xMargin(
-                              context,
-                              2.03,
-                            ),
-                          ),
-                          Text(
-                            'Assets',
-                            style: TextStyle(
-                              fontFamily: 'Open Sans',
-                              fontSize: Config.textSize(context, 4.58),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                  ItemWidget(
+                    itemImage: 'images/asset.png',
+                    itemName: 'Assets',
+                    background: Color(0xFFE7F6E9),
                   ),
                   SizedBox(
                     height: Config.yMargin(context, 6.07),
                   ),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Container(
-                      padding: EdgeInsets.only(
-                        left: Config.textSize(context, 36),
-                      ),
-                      child: Row(
-                        children: <Widget>[
-                          CircleAvatar(
-                            backgroundColor: Color(0xFFFFEAEC),
-                            child: Image.asset('images/debt.png'),
-                          ),
-                          SizedBox(
-                            width: Config.xMargin(
-                              context,
-                              2.03,
-                            ),
-                          ),
-                          Text(
-                            'Debts',
-                            style: TextStyle(
-                              fontFamily: 'Open Sans',
-                              fontSize: Config.textSize(context, 4.58),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  )
+                  ItemWidget(
+                    itemImage: 'images/debt.png',
+                    itemName: 'Debts',
+                    background: Color(0xFFFCE4EC),
+                  ),
                 ],
               ),
             ),
           ),
         ],
       )),
+    );
+  }
+}
+
+class ItemWidget extends StatelessWidget {
+  ItemWidget(
+      {@required this.itemImage,
+      @required this.itemName,
+      this.onPressed,
+      @required this.background});
+
+  final String itemImage;
+  final String itemName;
+  final Function onPressed;
+  final Color background;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onPressed,
+      child: Container(
+        padding: EdgeInsets.only(
+          left: Config.textSize(context, 36),
+        ),
+        child: Row(
+          children: <Widget>[
+            CircleAvatar(
+              backgroundColor: background,
+              child: Image.asset(itemImage),
+            ),
+            SizedBox(
+              width: Config.xMargin(
+                context,
+                2.03,
+              ),
+            ),
+            Text(
+              itemName,
+              style: TextStyle(
+                fontFamily: 'Open Sans',
+                fontSize: Config.textSize(context, 4.58),
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }

@@ -19,12 +19,26 @@ class _AddAssetScreenState extends State<AddAssetScreen> {
   FocusNode _locationfocusNode = FocusNode();
   FocusNode _valuefocusNode = FocusNode();
 
+  String type;
+  bool showLocation;
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
 
     var addAssetModel = Provider.of<AddAssetModel>(context);
+
+    type = addAssetModel.selectedAssetItem == 'Real Estate'
+        ? 'Type(Land,house,etc)'
+        : addAssetModel.selectedAssetItem == 'Valuables'
+            ? 'Type(Cars,jewelry,etc)'
+            : addAssetModel.selectedAssetItem == 'Investments'
+                ? 'Type(Stocks,crypto,etc)'
+                : '';
+
+    showLocation =
+        addAssetModel.selectedAssetItem == 'Real Estate' ? true : false;
 
     return Scaffold(
       backgroundColor: appThemeData.backgroundColor,
@@ -101,7 +115,7 @@ class _AddAssetScreenState extends State<AddAssetScreen> {
                     height: Config.yMargin(context, 3.04),
                   ),
                   Text(
-                    'Type(Land,house,etc)',
+                    type,
                     style: TextStyle(
                         fontFamily: 'Open Sans',
                         color: _typeEditingController.text.isNotEmpty == true
@@ -147,53 +161,63 @@ class _AddAssetScreenState extends State<AddAssetScreen> {
                   SizedBox(
                     height: Config.yMargin(context, 3.04),
                   ),
-                  Text(
-                    'Location',
-                    style: TextStyle(
-                        fontFamily: 'Open Sans',
-                        color:
-                            _locationEditingController.text.isNotEmpty == true
-                                ? appThemeData.primaryColor
-                                : appThemeData.primaryColorDark),
-                  ),
-                  SizedBox(
-                    height: Config.yMargin(context, 1.01),
-                  ),
-                  TextField(
-                    controller: _locationEditingController,
-                    focusNode: _locationfocusNode,
-                    onChanged: (val) {
-                      val = _locationEditingController.text;
-                      print(val);
-                    },
+                  Visibility(
+                    visible: showLocation,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          'Location',
+                          textAlign: TextAlign.start,
+                          style: TextStyle(
+                              fontFamily: 'Open Sans',
+                              color:
+                                  _locationEditingController.text.isNotEmpty ==
+                                          true
+                                      ? appThemeData.primaryColor
+                                      : appThemeData.primaryColorDark),
+                        ),
+                        SizedBox(
+                          height: Config.yMargin(context, 1.01),
+                        ),
+                        TextField(
+                          controller: _locationEditingController,
+                          focusNode: _locationfocusNode,
+                          onChanged: (val) {
+                            val = _locationEditingController.text;
+                            print(val);
+                          },
 //                    autofocus: false,
-                    cursorColor: appThemeData.primaryColor,
-                    style: TextStyle(
-                        color: appThemeData.primaryColor,
-                        fontSize: Config.xMargin(context, 5.5)),
-                    decoration: InputDecoration(
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(
-                            Config.xMargin(context, 1),
+                          cursorColor: appThemeData.primaryColor,
+                          style: TextStyle(
+                              color: appThemeData.primaryColor,
+                              fontSize: Config.xMargin(context, 5.5)),
+                          decoration: InputDecoration(
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(
+                                  Config.xMargin(context, 1),
+                                ),
+                              ),
+                              borderSide:
+                                  BorderSide(color: appThemeData.primaryColor),
+                            ),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(
+                                  Config.xMargin(context, 1),
+                                ),
+                              ),
+                              borderSide: BorderSide(
+                                  color: appThemeData.primaryColorDark),
+                            ),
                           ),
                         ),
-                        borderSide:
-                            BorderSide(color: appThemeData.primaryColor),
-                      ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(
-                            Config.xMargin(context, 1),
-                          ),
+                        SizedBox(
+                          height: Config.yMargin(context, 3.04),
                         ),
-                        borderSide:
-                            BorderSide(color: appThemeData.primaryColorDark),
-                      ),
+                      ],
                     ),
-                  ),
-                  SizedBox(
-                    height: Config.yMargin(context, 3.04),
                   ),
                   Text(
                     'Value',

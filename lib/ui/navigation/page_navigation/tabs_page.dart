@@ -20,6 +20,8 @@ class _TabsPageState extends State<TabsPage> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        showSelectedLabels: true,
         selectedItemColor: appThemeData.primaryColor,
         currentIndex: _currentIndex,
         onTap: (int index) => setState(() => _currentIndex = index),

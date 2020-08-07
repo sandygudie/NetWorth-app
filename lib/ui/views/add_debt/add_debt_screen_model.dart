@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:networthapp/ui/DropdownItem.dart';
+import 'package:networthapp/ui/components/DropdownItem.dart';
 
 class AddDebtModel extends ChangeNotifier {
   final List<String> period = ['Day', 'Week', 'Month', 'Year'];

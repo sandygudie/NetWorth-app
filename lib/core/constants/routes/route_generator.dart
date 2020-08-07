@@ -8,6 +8,7 @@ import 'package:networthapp/ui/views/add_debt/add_debt_screen.dart';
 
 import 'package:networthapp/ui/views/add_item_screen.dart';
 import 'package:networthapp/ui/views/add_money/add_money_screen.dart';
+import 'package:networthapp/ui/views/all_chart_screen/all_chart_screen.dart';
 import 'package:networthapp/ui/views/home_screen/home_screen.dart';
 import 'package:networthapp/ui/views/login_screen/login_screen.dart';
 import 'package:networthapp/ui/views/onboarding_screen/onboarding_screen.dart';
@@ -61,6 +62,9 @@ class RouteGenerator {
         break;
       case RouteNames.notificationsScreen:
         return CustomSlideTransition(child: NotificationsScreen());
+        break;
+      case RouteNames.allChartScreen:
+        return CustomSlideTransition(child: AllChartScreen());
         break;
     }
   }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:networthapp/ui/components/DropdownItem.dart';
 
 class AddMoneyModel extends ChangeNotifier {
-  List<DropdownItem> moneyItems = [
+  static List<DropdownItem> moneyItems = [
     DropdownItem(
       itemImage: 'images/savings.png',
       itemName: 'Savings',
@@ -25,17 +25,17 @@ class AddMoneyModel extends ChangeNotifier {
     )
   ];
 
-//  var selectedMoneyItem = DropdownItem(
-//    itemImage: 'images/savings.png',
-//    itemName: 'Savings',
-//    background: Color(0xFFFFF3E1),
-//  );
+  var selectedMoneyItem = moneyItems[0].itemName;
 
-  var selectedMoneyItem;
+//  var selectedMoneyItem = moneyItems[0];
+//
+//  List<int> get mls => _mls;
+//
+//  List<int> get mls => moneyItems;
 
-  String updateItem(DropdownItem val) {
+  String updateItem(String val) {
     selectedMoneyItem = val;
     notifyListeners();
-    return selectedMoneyItem.itemName;
+    return selectedMoneyItem;
   }
 }

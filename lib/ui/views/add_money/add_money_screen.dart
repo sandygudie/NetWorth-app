@@ -60,7 +60,6 @@ class _AddMoneyScreenState extends State<AddMoneyScreen> {
                     builder: (FormFieldState<String> state) {
                       return InputDecorator(
                         decoration: InputDecoration(
-                          hintText: 'Savings',
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.all(
                               Radius.circular(
@@ -77,11 +76,10 @@ class _AddMoneyScreenState extends State<AddMoneyScreen> {
                               size: Config.xMargin(context, 8),
                             ),
                             value: addMoneyModel.selectedMoneyItem,
-//                          value: null,
                             isDense: true,
-                            items: addMoneyModel.moneyItems.map((value) {
-                              return DropdownMenuItem<DropdownItem>(
-                                value: value,
+                            items: AddMoneyModel.moneyItems.map((value) {
+                              return DropdownMenuItem<dynamic>(
+                                value: value.itemName,
                                 child: value,
                               );
                             }).toList(),
@@ -192,7 +190,7 @@ class _AddMoneyScreenState extends State<AddMoneyScreen> {
                 ],
               ),
               Container(
-                height: Config.yMargin(context, 5.5),
+                height: Config.yMargin(context, 6),
                 child: FlatButton(
                   color: appThemeData.buttonColor,
                   onPressed: () {},

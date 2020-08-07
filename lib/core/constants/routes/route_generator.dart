@@ -13,6 +13,8 @@ import 'package:networthapp/ui/views/login_screen/login_screen.dart';
 import 'package:networthapp/ui/views/onboarding_screen/onboarding_screen.dart';
 import 'package:networthapp/ui/views/portfolio_screen/portfolio_screen.dart';
 import 'package:networthapp/ui/views/progress_screen/progress_screen.dart';
+import 'package:networthapp/ui/views/settings/notifications_screen.dart';
+import 'package:networthapp/ui/views/settings/settings_screen.dart';
 import 'package:networthapp/ui/views/signup_screen/signup_screen.dart';
 import 'package:networthapp/ui/views/splashscreen.dart';
 
@@ -54,6 +56,11 @@ class RouteGenerator {
         break;
       case RouteNames.progressScreen:
         return CustomSlideTransition(child: ProgressScreen());
+      case RouteNames.settingsScreen:
+        return CustomSlideTransition(child: SettingsScreen());
+        break;
+      case RouteNames.notificationsScreen:
+        return CustomSlideTransition(child: NotificationsScreen());
         break;
     }
   }

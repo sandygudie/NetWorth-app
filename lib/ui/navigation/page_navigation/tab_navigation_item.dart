@@ -4,6 +4,7 @@ import 'package:networthapp/ui/Theme/appTheme.dart';
 import 'package:networthapp/ui/views/home_screen/home_screen.dart';
 import 'package:networthapp/ui/views/portfolio_screen/portfolio_screen.dart';
 import 'package:networthapp/ui/views/progress_screen/progress_screen.dart';
+import 'package:networthapp/ui/views/settings/settings_screen.dart';
 
 class TabNavigationItem {
   final Widget page;
@@ -44,6 +45,14 @@ class TabNavigationItem {
           icon: Icon(Icons.loyalty),
           title: Text(
             "Progress",
+            style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
+          ),
+        ),
+        TabNavigationItem(
+          page: SettingsScreen(),
+          icon: Icon(Icons.settings),
+          title: Text(
+            "Settings",
             style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
           ),
         ),
